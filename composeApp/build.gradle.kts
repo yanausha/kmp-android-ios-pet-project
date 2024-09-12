@@ -49,6 +49,12 @@ kotlin {
 
             //Coroutines
             implementation(libs.kotlinx.coroutines.core)
+
+            //ViewModel
+            implementation(libs.compose.viewmodel)
+
+            //Navigation
+            implementation(libs.compose.navigation)
         }
         androidMain.dependencies {
             implementation(libs.compose.ui.tooling.preview)
