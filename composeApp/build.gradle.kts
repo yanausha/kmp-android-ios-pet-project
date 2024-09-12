@@ -46,6 +46,9 @@ kotlin {
             implementation(libs.androidx.paging.common)
             implementation(libs.androidx.room.runtime)
             implementation(libs.sqlite.bundled)
+
+            //Coroutines
+            implementation(libs.kotlinx.coroutines.core)
         }
         androidMain.dependencies {
             implementation(libs.compose.ui.tooling.preview)
@@ -53,6 +56,9 @@ kotlin {
 
             // Room
             implementation(libs.androidx.room.paging)
+
+            //Coroutines
+            implementation(libs.kotlinx.coroutines.android)
         }
         iosMain.dependencies {
             // Intentionally left blank
