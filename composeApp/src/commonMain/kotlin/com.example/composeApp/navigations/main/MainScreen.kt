@@ -8,8 +8,8 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.BottomNavigation
 import androidx.compose.material.BottomNavigationItem
-import androidx.compose.material.Icon
-import androidx.compose.material.Text
+import androidx.compose.material3.Icon
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
@@ -20,6 +20,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
+import com.example.composeApp.features.foodstuff.FoodstuffsScreen
 import com.example.composeApp.navigations.MainScreens
 import com.example.composeApp.theme.AppTheme
 import com.example.composeApp.theme.WatchEatTheme
@@ -37,7 +38,7 @@ fun MainScreen() {
         ) {
             composable(MainScreens.ShoppingList.route) { AppTheme { Text("ShoppingList") } }
             composable(MainScreens.TimeTable.route) { AppTheme { Text("TimeTable") }  }
-            composable(MainScreens.Foodstuffs.route) { AppTheme { Text("Foodstuffs") }  }
+            composable(MainScreens.Foodstuffs.route) { FoodstuffsScreen() }
         }
 
         BottomNavigation(
