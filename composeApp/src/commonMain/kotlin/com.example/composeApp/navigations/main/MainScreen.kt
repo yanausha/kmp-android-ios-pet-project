@@ -21,6 +21,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.example.composeApp.features.foodstuff.FoodstuffsScreen
+import com.example.composeApp.features.timetable.TimeTableScreen
 import com.example.composeApp.navigations.MainScreens
 import com.example.composeApp.theme.AppTheme
 import com.example.composeApp.theme.WatchEatTheme
@@ -37,7 +38,7 @@ fun MainScreen() {
             startDestination = MainScreens.ShoppingList.route
         ) {
             composable(MainScreens.ShoppingList.route) { AppTheme { Text("ShoppingList") } }
-            composable(MainScreens.TimeTable.route) { AppTheme { Text("TimeTable") }  }
+            composable(MainScreens.TimeTable.route) { TimeTableScreen() }
             composable(MainScreens.Foodstuffs.route) { FoodstuffsScreen() }
         }
 
