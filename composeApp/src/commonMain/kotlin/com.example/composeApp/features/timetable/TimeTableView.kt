@@ -5,7 +5,12 @@ import androidx.compose.runtime.Composable
 import com.example.composeApp.features.timetable.model.TimeTableEvent
 import com.example.composeApp.features.timetable.model.TimeTableViewState
 import com.example.composeApp.ui.BaseToolbar
+import org.jetbrains.compose.resources.ExperimentalResourceApi
+import org.jetbrains.compose.resources.stringResource
+import watcheat.composeapp.generated.resources.Res
+import watcheat.composeapp.generated.resources.timetable
 
+@OptIn(ExperimentalResourceApi::class)
 @Composable
 internal fun TimeTableView(
     state: TimeTableViewState,
@@ -14,7 +19,7 @@ internal fun TimeTableView(
     Scaffold(
         topBar = {
             BaseToolbar(
-                "Дневник питания"
+                title = stringResource(Res.string.timetable)
             )
         }
     ) {

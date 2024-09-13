@@ -1,0 +1,5 @@
+<resources>
+    <string name="shoppinglist">Список покупок</string>
+    <string name="timetable">Дневник питания</string>
+    <string name="foodstuffs">Продукты</string>
+</resources>

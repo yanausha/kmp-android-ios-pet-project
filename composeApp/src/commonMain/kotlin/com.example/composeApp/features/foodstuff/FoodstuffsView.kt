@@ -22,8 +22,13 @@ import com.example.composeApp.ui.DeleteImage
 import com.example.composeApp.ui.InputIntText
 import com.example.composeApp.ui.InputText
 import com.example.composeApp.ui.NotColorSpacer
+import org.jetbrains.compose.resources.ExperimentalResourceApi
+import org.jetbrains.compose.resources.stringResource
 import org.jetbrains.compose.ui.tooling.preview.Preview
+import watcheat.composeapp.generated.resources.Res
+import watcheat.composeapp.generated.resources.foodstuffs
 
+@OptIn(ExperimentalResourceApi::class)
 @Composable
 internal fun FoodstuffsView(
     state: FoodstuffsViewState,
@@ -32,7 +37,7 @@ internal fun FoodstuffsView(
     Scaffold(
         topBar = {
             BaseToolbar(
-                title = "Продукты"
+                title = stringResource(Res.string.foodstuffs)
             )
         },
         bottomBar = {},
