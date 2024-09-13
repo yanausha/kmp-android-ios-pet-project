@@ -17,3 +17,5 @@ local.properties
 # Project exclude paths
 /composeApp/build/
 /composeApp/build/classes/kotlin/iosSimulatorArm64/main/klib/
+/.idea
+/composeApp/schemas

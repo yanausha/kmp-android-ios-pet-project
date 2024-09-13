@@ -91,12 +91,12 @@ internal fun FoodstuffsViewPreview() {
             state = FoodstuffsViewState(
                 foodstuffs = listOf(
                     FoodstuffItem(
-                        id = "0",
+                        id = 0L,
                         name = "Apple",
                         count = 1
                     ),
                     FoodstuffItem(
-                        id = "1",
+                        id = 1L,
                         name = null,
                         count = null
                     ),
