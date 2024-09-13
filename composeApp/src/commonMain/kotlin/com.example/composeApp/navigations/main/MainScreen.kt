@@ -9,7 +9,6 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material.BottomNavigation
 import androidx.compose.material.BottomNavigationItem
 import androidx.compose.material3.Icon
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
@@ -21,9 +20,9 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.example.composeApp.features.foodstuff.FoodstuffsScreen
+import com.example.composeApp.features.shoppinglist.ShoppingListScreen
 import com.example.composeApp.features.timetable.TimeTableScreen
 import com.example.composeApp.navigations.MainScreens
-import com.example.composeApp.theme.AppTheme
 import com.example.composeApp.theme.WatchEatTheme
 
 @Composable
@@ -37,7 +36,7 @@ fun MainScreen() {
             modifier = Modifier.padding(bottom = 48.dp).fillMaxHeight(),
             startDestination = MainScreens.ShoppingList.route
         ) {
-            composable(MainScreens.ShoppingList.route) { AppTheme { Text("ShoppingList") } }
+            composable(MainScreens.ShoppingList.route) { ShoppingListScreen() }
             composable(MainScreens.TimeTable.route) { TimeTableScreen() }
             composable(MainScreens.Foodstuffs.route) { FoodstuffsScreen() }
         }
