@@ -1,7 +1,6 @@
 package com.example.composeApp.features.foodstuff
 
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
@@ -13,6 +12,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
+import com.example.composeApp.enums.ProductUnit
 import com.example.composeApp.features.foodstuff.domain.FoodstuffItem
 import com.example.composeApp.features.foodstuff.model.FoodstuffsEvent
 import com.example.composeApp.features.foodstuff.model.FoodstuffsViewState
@@ -22,6 +22,7 @@ import com.example.composeApp.ui.DeleteImage
 import com.example.composeApp.ui.InputIntText
 import com.example.composeApp.ui.InputText
 import com.example.composeApp.ui.NotColorSpacer
+import com.example.composeApp.ui.ProductUnitDropdownMenu
 import org.jetbrains.compose.resources.ExperimentalResourceApi
 import org.jetbrains.compose.resources.stringResource
 import org.jetbrains.compose.ui.tooling.preview.Preview
@@ -51,6 +52,7 @@ internal fun FoodstuffsView(
                     foodstuff = item,
                     onFoodNameChange = { name -> eventHandler.invoke(FoodstuffsEvent.OnFoodstuffUpdate(item.copy(name = name))) },
                     onFoodCountChange = { count -> eventHandler.invoke(FoodstuffsEvent.OnFoodstuffUpdate(item.copy(count = count))) },
+                    onUnitChange = { unit -> eventHandler.invoke(FoodstuffsEvent.OnFoodstuffUpdate(item.copy(unit = unit))) },
                     onDeleteFoodClicked = { eventHandler.invoke(FoodstuffsEvent.OnFoodstuffDelete(item)) }
                 )
                 NotColorSpacer()
@@ -64,27 +66,31 @@ private fun FoodItem(
     foodstuff: FoodstuffItem,
     onFoodNameChange: (String) -> Unit,
     onFoodCountChange: (Int) -> Unit,
+    onUnitChange: (ProductUnit) -> Unit,
     onDeleteFoodClicked: () -> Unit
 ) {
-    Column {
-        Row(
-            modifier = Modifier.padding(start = 4.dp, end = 4.dp),
-            verticalAlignment = Alignment.CenterVertically
-        ) {
-            InputText(
-                value = foodstuff.name.orEmpty(),
-                hint = "Название",
-                modifier = Modifier.weight(3f),
-                onValueChange = onFoodNameChange
-            )
-            InputIntText(
-                value = "${foodstuff.count}",
-                modifier = Modifier.weight(1f),
-                onValueChange = onFoodCountChange
-            )
-            DeleteImage(onDeleteClicked = onDeleteFoodClicked)
-            NotColorSpacer()
-        }
+    Row(
+        modifier = Modifier.padding(start = 4.dp, end = 4.dp),
+        verticalAlignment = Alignment.CenterVertically
+    ) {
+        InputText(
+            value = foodstuff.name.orEmpty(),
+            hint = "Название",
+            modifier = Modifier.weight(3f),
+            onValueChange = onFoodNameChange
+        )
+        InputIntText(
+            value = "${foodstuff.count}",
+            modifier = Modifier.weight(1f),
+            onValueChange = onFoodCountChange
+        )
+        ProductUnitDropdownMenu(
+            unit = foodstuff.unit,
+            modifier = Modifier.weight(1f),
+            onUnitChange = onUnitChange,
+        )
+        DeleteImage(onDeleteClicked = onDeleteFoodClicked)
+        NotColorSpacer()
     }
 }
 

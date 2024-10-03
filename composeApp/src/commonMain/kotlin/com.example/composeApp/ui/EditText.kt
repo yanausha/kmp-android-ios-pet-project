@@ -40,16 +40,15 @@ internal fun InputText(
             fontWeight = FontWeight.Bold,
         ),
         placeholder = {
-                Text(
-                    text = hint,
-                    color = WatchEatTheme.colors.ecruElement,
-                )
+            Text(
+                text = hint,
+                color = WatchEatTheme.colors.ecruElement,
+            )
         },
         colors = TextFieldDefaults.colors(
-            unfocusedContainerColor =
-            if (name.isEmpty()) WatchEatTheme.colors.almondBackground else WatchEatTheme.colors.whiteText,
+            unfocusedContainerColor = WatchEatTheme.colors.whiteText,
             unfocusedTextColor = WatchEatTheme.colors.darkBrowmOliveText,
-            focusedContainerColor = WatchEatTheme.colors.almondBackground,
+            focusedContainerColor = WatchEatTheme.colors.whiteText,
             focusedTextColor = WatchEatTheme.colors.darkBrowmOliveText,
             cursorColor = WatchEatTheme.colors.ecruElement,
             focusedIndicatorColor = WatchEatTheme.colors.ecruElement,
@@ -90,10 +89,9 @@ internal fun InputIntText(
             )
         },
         colors = TextFieldDefaults.colors(
-            unfocusedContainerColor =
-            if (count.isEmpty()) WatchEatTheme.colors.almondBackground else WatchEatTheme.colors.whiteText,
+            unfocusedContainerColor = WatchEatTheme.colors.whiteText,
             unfocusedTextColor = WatchEatTheme.colors.darkBrowmOliveText,
-            focusedContainerColor = WatchEatTheme.colors.sandBackground,
+            focusedContainerColor = WatchEatTheme.colors.whiteText,
             focusedTextColor = WatchEatTheme.colors.darkBrowmOliveText,
             cursorColor = WatchEatTheme.colors.ecruElement,
             focusedIndicatorColor = WatchEatTheme.colors.ecruElement,
