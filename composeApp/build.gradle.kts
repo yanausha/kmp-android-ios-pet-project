@@ -56,6 +56,9 @@ kotlin {
 
             //Navigation
             implementation(libs.compose.navigation)
+
+            //Koin
+            implementation(libs.koin.core)
         }
         androidMain.dependencies {
             implementation(libs.compose.ui.tooling.preview)
@@ -66,6 +69,9 @@ kotlin {
 
             //Coroutines
             implementation(libs.kotlinx.coroutines.android)
+
+            //Koin
+            implementation(libs.koin.android)
         }
         iosMain.dependencies {
             // Intentionally left blank

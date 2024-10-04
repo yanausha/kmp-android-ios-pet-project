@@ -11,3 +11,5 @@ fun getDatabaseBuilderIos(): RoomDatabase.Builder<AppDatabase> {
         factory = { AppDatabase::class.instantiateImpl() }
     )
 }
+
+fun getDatabase() = getDatabaseBuilderIos().build()
