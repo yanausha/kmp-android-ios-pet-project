@@ -1,5 +1,6 @@
 package com.example.composeApp.di
 
+import com.example.composeApp.features.foodstuff.foodstuffModule
 import org.koin.core.Koin
 import org.koin.core.context.startKoin
 import org.koin.core.module.Module
@@ -19,5 +20,6 @@ fun initKoin(appDeclaration: KoinAppDeclaration) = startKoin {
     appDeclaration()
     modules(
         platformModule(),
+        foodstuffModule(),
     )
 }

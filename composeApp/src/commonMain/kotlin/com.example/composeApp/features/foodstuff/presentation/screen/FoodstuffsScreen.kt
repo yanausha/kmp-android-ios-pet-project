@@ -1,11 +1,12 @@
-package com.example.composeApp.features.foodstuff
+package com.example.composeApp.features.foodstuff.presentation.screen
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.lifecycle.viewmodel.compose.viewModel
+import com.example.composeApp.features.foodstuff.presentation.FoodstuffsViewModel
 import com.example.composeApp.navigations.LocalNavHost
-import com.example.composeApp.features.foodstuff.model.FoodstuffsEvent
+import com.example.composeApp.features.foodstuff.presentation.model.FoodstuffsEvent
 
 @Composable
 fun FoodstuffsScreen(

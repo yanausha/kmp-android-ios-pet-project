@@ -19,7 +19,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
-import com.example.composeApp.features.foodstuff.FoodstuffsScreen
+import com.example.composeApp.features.foodstuff.presentation.screen.FoodstuffsScreen
 import com.example.composeApp.features.shoppinglist.ShoppingListScreen
 import com.example.composeApp.features.timetable.TimeTableScreen
 import com.example.composeApp.navigations.MainScreens

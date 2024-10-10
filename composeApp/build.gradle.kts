@@ -59,6 +59,9 @@ kotlin {
 
             //Koin
             implementation(libs.koin.core)
+
+            //KotlinX
+            implementation(libs.kotlinx.datetime)
         }
         androidMain.dependencies {
             implementation(libs.compose.ui.tooling.preview)

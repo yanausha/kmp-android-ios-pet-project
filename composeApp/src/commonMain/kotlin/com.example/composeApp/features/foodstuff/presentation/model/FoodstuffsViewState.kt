@@ -1,4 +1,4 @@
-package com.example.composeApp.features.foodstuff.model
+package com.example.composeApp.features.foodstuff.presentation.model
 
 import com.example.composeApp.features.foodstuff.domain.FoodstuffItem
 

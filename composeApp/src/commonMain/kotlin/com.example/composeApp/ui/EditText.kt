@@ -19,6 +19,10 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
 import com.example.composeApp.theme.WatchEatTheme
 import kotlinx.coroutines.delay
+import org.jetbrains.compose.resources.ExperimentalResourceApi
+import org.jetbrains.compose.resources.stringResource
+import watcheat.composeapp.generated.resources.Res
+import watcheat.composeapp.generated.resources.change_count
 
 @Composable
 internal fun InputText(
@@ -62,6 +66,7 @@ internal fun InputText(
     }
 }
 
+@OptIn(ExperimentalResourceApi::class)
 @Composable
 internal fun InputIntText(
     value: String,
@@ -84,7 +89,7 @@ internal fun InputIntText(
         ),
         placeholder = {
             Text(
-                text = "0",
+                text = stringResource(Res.string.change_count, 0),
                 color = WatchEatTheme.colors.ecruElement
             )
         },

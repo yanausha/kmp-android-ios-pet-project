@@ -1,4 +1,4 @@
-package com.example.composeApp.features.foodstuff.database
+package com.example.composeApp.features.foodstuff.data.database
 
 import androidx.room.Dao
 import androidx.room.Insert
@@ -16,4 +16,7 @@ interface FoodstuffDao {
 
     @Query("SELECT * FROM FoodstuffEntity")
     fun getAll(): Flow<List<FoodstuffEntity>>
+
+    @Query("DELETE FROM FoodstuffEntity WHERE FoodstuffEntity.id = :id")
+    suspend fun deleteById(id: Long)
 }

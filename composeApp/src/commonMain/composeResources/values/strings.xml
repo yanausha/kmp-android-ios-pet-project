@@ -8,4 +8,8 @@
     <string name="milliliters">мл</string>
     <string name="liters">л</string>
     <string name="gramme">г</string>
+
+    <string name="hint_name">Название</string>
+
+    <string name="change_count">%1$s</string>
 </resources>

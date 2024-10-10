@@ -55,6 +55,9 @@ compose-navigation = { module = "org.jetbrains.androidx.navigation:navigation-co
 koin-core = { module = "io.insert-koin:koin-core", version.ref = "koin" }
 koin-android = { module = "io.insert-koin:koin-android", version.ref = "koin" }
 
+#KotlinX
+kotlinx-datetime = "org.jetbrains.kotlinx:kotlinx-datetime:0.6.1"
+
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
 androidLibrary = { id = "com.android.library", version.ref = "agp" }
