@@ -3,6 +3,9 @@
     <string name="timetable">Дневник питания</string>
     <string name="foodstuffs">Продукты</string>
 
+    <string name="cookingrecipes_title">Рецепты</string>
+    <string name="cookingrecipe_title">Новый рецепт</string>
+
     <string name="kilogramme">кг</string>
     <string name="piece">шт</string>
     <string name="milliliters">мл</string>

@@ -13,5 +13,7 @@ enum class MainScreens(val route: String, val icon: ImageVector) {
 }
 
 enum class AppScreens(val route: String) {
-    MainScreen("main")
+    MainScreen("main"),
+    CookingRecipesScreen("cookingrecipes"),
+    CookingRecipeScreen("cookingrecipe"),
 }

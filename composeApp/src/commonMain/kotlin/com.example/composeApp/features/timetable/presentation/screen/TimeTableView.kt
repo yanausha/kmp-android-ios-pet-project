@@ -1,10 +1,11 @@
-package com.example.composeApp.features.timetable
+package com.example.composeApp.features.timetable.presentation.screen
 
 import androidx.compose.material.Scaffold
 import androidx.compose.runtime.Composable
-import com.example.composeApp.features.timetable.model.TimeTableEvent
-import com.example.composeApp.features.timetable.model.TimeTableViewState
+import com.example.composeApp.features.timetable.presentation.model.TimeTableEvent
+import com.example.composeApp.features.timetable.presentation.model.TimeTableViewState
 import com.example.composeApp.ui.BaseToolbar
+import com.example.composeApp.ui.PlusIconButton
 import org.jetbrains.compose.resources.ExperimentalResourceApi
 import org.jetbrains.compose.resources.stringResource
 import watcheat.composeapp.generated.resources.Res
@@ -19,10 +20,12 @@ internal fun TimeTableView(
     Scaffold(
         topBar = {
             BaseToolbar(
-                title = stringResource(Res.string.timetable)
-            )
+                title = stringResource(Res.string.timetable),
+            ) {
+                PlusIconButton {
+                    eventHandler.invoke(TimeTableEvent.ShowCookingRecipesClicked)
+                }
+            }
         }
-    ) {
-
-    }
+    ) {}
 }

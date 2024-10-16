@@ -1,0 +1,3 @@
+package com.example.composeApp.features.cookingrecipes.presentation.model
+
+class CookingRecipesViewState

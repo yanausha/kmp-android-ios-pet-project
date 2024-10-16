@@ -23,6 +23,7 @@ import com.example.composeApp.ui.DeleteImage
 import com.example.composeApp.ui.InputIntText
 import com.example.composeApp.ui.InputText
 import com.example.composeApp.ui.NotColorSpacer
+import com.example.composeApp.ui.PlusIconButton
 import com.example.composeApp.ui.ProductUnitDropdownMenu
 import org.jetbrains.compose.resources.ExperimentalResourceApi
 import org.jetbrains.compose.resources.stringResource
@@ -41,8 +42,11 @@ internal fun FoodstuffsView(
         topBar = {
             BaseToolbar(
                 title = stringResource(Res.string.foodstuffs),
-                onPlusClicked = { eventHandler.invoke(FoodstuffsEvent.CreateItemClicked) },
-            )
+            ) {
+                PlusIconButton {
+                    eventHandler.invoke(FoodstuffsEvent.CreateItemClicked)
+                }
+            }
         },
     ) { paddingValues ->
         Content(
