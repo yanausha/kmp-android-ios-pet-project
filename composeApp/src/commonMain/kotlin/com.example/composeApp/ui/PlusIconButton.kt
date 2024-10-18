@@ -7,6 +7,7 @@ import androidx.compose.material.IconButton
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import com.example.composeApp.theme.WatchEatTheme
 import org.jetbrains.compose.resources.ExperimentalResourceApi
 import org.jetbrains.compose.resources.painterResource
@@ -16,17 +17,19 @@ import watcheat.composeapp.generated.resources.plus
 @OptIn(ExperimentalResourceApi::class)
 @Composable
 internal fun PlusIconButton(
+    modifier: Modifier = Modifier,
+    color: Color = WatchEatTheme.colors.whiteText,
     onPlusClicked: () -> Unit,
 ) {
     Box(
-        modifier = Modifier.fillMaxWidth(),
+        modifier = modifier.fillMaxWidth(),
         contentAlignment = Alignment.CenterEnd
     ) {
         IconButton(onClick = onPlusClicked) {
             Icon(
                 painter = painterResource(Res.drawable.plus),
                 contentDescription = null,
-                tint = WatchEatTheme.colors.whiteText
+                tint = color
             )
         }
     }

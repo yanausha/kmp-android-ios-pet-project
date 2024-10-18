@@ -1,3 +1,7 @@
 package com.example.composeApp.features.cookingrecipe.presentation.model
 
-class CookingRecipeViewState
+import com.example.composeApp.features.cookingrecipe.domain.CookingRecipeItem
+
+data class CookingRecipeViewState(
+    val recipe: CookingRecipeItem = CookingRecipeItem(id = 0L)
+)

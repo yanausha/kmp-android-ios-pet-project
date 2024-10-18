@@ -29,5 +29,9 @@ fun CookingRecipeScreen(
             externalNavHost.navigate(AppScreens.CookingRecipesScreen.route)
             cookingRecipeViewModel.clearAction()
         }
+
+        CookingRecipeAction.AddIngredients -> {
+            cookingRecipeViewModel.clearAction()
+        }
     }
 }

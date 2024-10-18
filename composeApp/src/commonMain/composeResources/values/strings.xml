@@ -4,7 +4,9 @@
     <string name="foodstuffs">Продукты</string>
 
     <string name="cookingrecipes_title">Рецепты</string>
+
     <string name="cookingrecipe_title">Новый рецепт</string>
+    <string name="ingredients">Ингредиенты</string>
 
     <string name="kilogramme">кг</string>
     <string name="piece">шт</string>
@@ -13,6 +15,9 @@
     <string name="gramme">г</string>
 
     <string name="hint_name">Название</string>
+    <string name="hint_description">Описание</string>
 
     <string name="change_count">%1$s</string>
+
+    <string name="create">Создать</string>
 </resources>

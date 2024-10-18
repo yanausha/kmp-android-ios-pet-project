@@ -7,7 +7,7 @@ import com.example.composeApp.features.foodstuff.domain.FoodstuffItem
 
 @Entity
 class FoodstuffEntity(
-    @PrimaryKey(autoGenerate = true) val id: Long,
+    @PrimaryKey val id: Long,
     val name: String = "",
     val count: Int = 0,
     val unit: String = ProductUnit.PIECE.name,
