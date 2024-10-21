@@ -7,6 +7,7 @@ import com.example.composeApp.features.foodstuff.domain.FoodstuffItem
 import com.example.composeApp.features.foodstuff.presentation.model.FoodstuffsAction
 import com.example.composeApp.features.foodstuff.presentation.model.FoodstuffsEvent
 import com.example.composeApp.features.foodstuff.presentation.model.FoodstuffsViewState
+import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.launch
 import org.koin.core.component.KoinComponent
 import org.koin.core.component.inject
@@ -42,14 +43,11 @@ class FoodstuffsViewModel :
 
     private fun updateList() {
         viewModelScope.launch {
-            try {
-                interactor.getAll()
-                    .collect { list: List<FoodstuffItem> ->
-                        viewState = viewState.copy(foodstuffs = list)
-                    }
-            } catch (e: Exception) {
-                e.printStackTrace()
-            }
+            interactor.getAll()
+                .catch { it.printStackTrace() }
+                .collect { list: List<FoodstuffItem> ->
+                    viewState = viewState.copy(foodstuffs = list)
+                }
         }
     }
 

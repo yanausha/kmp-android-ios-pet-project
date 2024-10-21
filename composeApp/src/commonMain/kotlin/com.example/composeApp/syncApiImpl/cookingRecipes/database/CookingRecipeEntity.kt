@@ -1,8 +1,8 @@
-package com.example.composeApp.features.cookingrecipe.data.database
+package com.example.composeApp.syncApiImpl.cookingRecipes.database
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import com.example.composeApp.features.cookingrecipe.domain.CookingRecipeItem
+import com.example.composeApp.syncApi.CookingRecipeSyncEntity
 
 @Entity
 data class CookingRecipeEntity(
@@ -11,8 +11,9 @@ data class CookingRecipeEntity(
     val insertDate: Long = 0L,
     val description: String,
 ) {
-    fun toItem() = CookingRecipeItem(
+    fun toSyncEntity() = CookingRecipeSyncEntity(
         id = id,
+        insertDate = insertDate,
         title = title,
         description = description
     )

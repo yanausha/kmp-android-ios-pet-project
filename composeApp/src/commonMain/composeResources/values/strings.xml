@@ -6,7 +6,9 @@
     <string name="cookingrecipes_title">Рецепты</string>
 
     <string name="cookingrecipe_title">Новый рецепт</string>
+    <string name="cookingrecipe_not_title">Неизвестный рецепт</string>
     <string name="ingredients">Ингредиенты</string>
+    <string name="ingredients_is_empty">добавьте ингредиенты</string>
 
     <string name="kilogramme">кг</string>
     <string name="piece">шт</string>

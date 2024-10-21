@@ -22,6 +22,17 @@ internal fun MediumSpacer() {
 }
 
 @Composable
+internal fun EcruColor20Spacer() {
+    Spacer(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(2.dp)
+            .height(2.dp)
+            .background(WatchEatTheme.colors.ecruElement.copy(0.2F))
+    )
+}
+
+@Composable
 internal fun NotColorSpacer() {
     Spacer(modifier = Modifier.height(4.dp))
 }

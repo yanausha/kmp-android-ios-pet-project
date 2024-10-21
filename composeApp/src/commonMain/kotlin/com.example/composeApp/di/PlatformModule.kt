@@ -1,7 +1,9 @@
 package com.example.composeApp.di
 
 import com.example.composeApp.features.cookingrecipe.cookingRecipeModule
+import com.example.composeApp.features.cookingrecipes.cookingRecipesModule
 import com.example.composeApp.features.foodstuff.foodstuffModule
+import com.example.composeApp.syncApi.syncModule
 import org.koin.core.Koin
 import org.koin.core.context.startKoin
 import org.koin.core.module.Module
@@ -22,6 +24,8 @@ fun initKoin(appDeclaration: KoinAppDeclaration) = startKoin {
     modules(
         platformModule(),
         foodstuffModule(),
-        cookingRecipeModule()
+        cookingRecipeModule(),
+        syncModule(),
+        cookingRecipesModule(),
     )
 }

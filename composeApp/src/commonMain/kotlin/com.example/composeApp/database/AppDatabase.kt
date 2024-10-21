@@ -2,8 +2,8 @@ package com.example.composeApp.database
 
 import androidx.room.Database
 import androidx.room.RoomDatabase
-import com.example.composeApp.features.cookingrecipe.data.database.CookingRecipeDao
-import com.example.composeApp.features.cookingrecipe.data.database.CookingRecipeEntity
+import com.example.composeApp.syncApiImpl.cookingRecipes.database.CookingRecipeDao
+import com.example.composeApp.syncApiImpl.cookingRecipes.database.CookingRecipeEntity
 import com.example.composeApp.features.foodstuff.data.database.FoodstuffDao
 import com.example.composeApp.features.foodstuff.data.database.FoodstuffEntity
 

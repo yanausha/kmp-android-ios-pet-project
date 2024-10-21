@@ -26,7 +26,9 @@ fun CookingRecipeScreen(
         null -> {}
 
         CookingRecipeAction.GoBack -> {
-            externalNavHost.navigate(AppScreens.CookingRecipesScreen.route)
+            externalNavHost.navigate(AppScreens.CookingRecipesScreen.route) {
+                popUpTo(AppScreens.CookingRecipesScreen.route)
+            }
             cookingRecipeViewModel.clearAction()
         }
 
