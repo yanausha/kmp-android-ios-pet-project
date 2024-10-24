@@ -1,4 +1,4 @@
-package com.example.composeApp.syncApiImpl.cookingRecipes.database
+package com.example.syncApiImpl.cookingRecipes.database
 
 import androidx.room.Dao
 import androidx.room.Insert

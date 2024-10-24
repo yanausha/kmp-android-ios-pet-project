@@ -1,11 +1,11 @@
-package com.example.composeApp.syncApiImpl.cookingRecipes.database
+package com.example.syncApiImpl.cookingRecipes.database
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import com.example.composeApp.syncApi.CookingRecipeSyncEntity
+import com.example.syncApi.CookingRecipeSyncEntity
 
 @Entity
-data class CookingRecipeEntity(
+class CookingRecipeEntity(
     @PrimaryKey val id: Long,
     val title: String,
     val insertDate: Long = 0L,

@@ -1,7 +1,7 @@
 package com.example.composeApp.features.cookingrecipe.domain
 
 import com.example.composeApp.features.foodstuff.domain.FoodstuffItem
-import com.example.composeApp.syncApi.CookingRecipeSyncEntity
+import com.example.syncApi.CookingRecipeSyncEntity
 
 data class CookingRecipeItem(
     val id: Long,
@@ -17,3 +17,10 @@ data class CookingRecipeItem(
         insertDate = insertDate
     )
 }
+
+fun CookingRecipeSyncEntity.toItem() = CookingRecipeItem(
+    id = id,
+    insertDate = insertDate,
+    title = title,
+    description = description
+)

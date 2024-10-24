@@ -1,8 +1,9 @@
 package com.example.composeApp.features.cookingrecipes.data
 
 import com.example.composeApp.features.cookingrecipe.domain.CookingRecipeItem
+import com.example.composeApp.features.cookingrecipe.domain.toItem
 import com.example.composeApp.features.cookingrecipes.domain.CookingRecipesRepository
-import com.example.composeApp.syncApi.CookingRecipesSyncApi
+import com.example.syncApi.CookingRecipesSyncApi
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.IO
 import kotlinx.coroutines.flow.Flow
@@ -16,7 +17,5 @@ class CookingRecipesRepositoryImpl(
     override suspend fun getAll(): Flow<List<CookingRecipeItem>> =
         cookingRecipesSyncApi.getCookingRecipeList()
             .flowOn(Dispatchers.IO)
-            .map { list ->
-                list.map { it.toItem() }
-            }
+            .map { list -> list.map { it.toItem() } }
 }

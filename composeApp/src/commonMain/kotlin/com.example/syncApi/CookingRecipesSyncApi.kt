@@ -1,4 +1,4 @@
-package com.example.composeApp.syncApi
+package com.example.syncApi
 
 import kotlinx.coroutines.flow.Flow
 
