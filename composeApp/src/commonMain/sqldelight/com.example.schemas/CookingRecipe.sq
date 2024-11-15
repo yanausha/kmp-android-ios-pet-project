@@ -1,0 +1,23 @@
+CREATE TABLE cookingRecipe(
+    id TEXT NOT NULL,
+    title TEXT,
+    insertDate INTEGER,
+    description TEXT
+);
+
+insert:
+INSERT INTO cookingRecipe(id, title, insertDate, description)
+VALUES(?, ?, ?, ?);
+
+selectAll:
+SELECT *
+FROM cookingRecipe;
+
+removeById:
+DELETE FROM cookingRecipe
+WHERE id = :id;
+
+selectById:
+SELECT *
+FROM cookingRecipe
+WHERE id = :id;

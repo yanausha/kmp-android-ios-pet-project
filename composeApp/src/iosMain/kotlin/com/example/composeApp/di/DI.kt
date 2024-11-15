@@ -1,9 +1,9 @@
 package com.example.composeApp.di
 
-import com.example.composeApp.database.AppDatabase
-import com.example.composeApp.database.getDatabase
+import com.example.composeApp.database.IOSDatabaseDriverFactory
+import com.example.composeApp.database.DatabaseDriverFactory
 import org.koin.dsl.module
 
 actual fun platformModule() = module {
-    single<AppDatabase> { getDatabase() }
+    single<DatabaseDriverFactory> { IOSDatabaseDriverFactory() }
 }

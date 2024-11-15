@@ -2,31 +2,30 @@ package com.example.syncApiImpl.foodstuffs
 
 import com.example.syncApi.FoodstuffSyncEntity
 import com.example.syncApi.FoodstuffsSyncApi
-import com.example.syncApiImpl.foodstuffs.database.FoodstuffDao
+import com.example.syncApiImpl.foodstuffs.database.FoodstuffDataSource
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.IO
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
-import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.withContext
 
 class FoodstuffsSyncApiImpl(
-    private val foodstuffDao: FoodstuffDao
+    private val foodstuffDataSource: FoodstuffDataSource
 ) : FoodstuffsSyncApi {
-    override suspend fun getAll(): Flow<List<FoodstuffSyncEntity>> = foodstuffDao.getAll()
-        .flowOn(Dispatchers.IO)
-        .map { list ->
-            list
-                .sortedByDescending { it.insertDate }
-                .map { entity -> entity.toSyncEntity() }
-        }
+
+    override suspend fun getAll(): Flow<List<FoodstuffSyncEntity>> = flow {
+        emit(
+            foodstuffDataSource.getAll().map { it.toSyncEntity() }
+        )
+    }.flowOn(Dispatchers.IO)
 
     override suspend fun createOrUpdate(foodstuff: FoodstuffSyncEntity) =
         withContext(Dispatchers.IO) {
-            foodstuffDao.insert(foodstuff.toDbEntity())
+            foodstuffDataSource.insert(foodstuff.toDbEntity())
         }
 
     override suspend fun delete(id: Long) = withContext(Dispatchers.IO) {
-        foodstuffDao.deleteById(id)
+        foodstuffDataSource.deleteById(id.toString())
     }
 }

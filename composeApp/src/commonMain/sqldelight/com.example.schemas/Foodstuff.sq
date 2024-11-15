@@ -1,0 +1,19 @@
+CREATE TABLE foodstuff(
+    id TEXT PRIMARY KEY NOT NULL,
+    name TEXT,
+    count INTEGER,
+    unit TEXT,
+    insertDate INTEGER
+);
+
+insert:
+INSERT INTO foodstuff(id, name, count, unit, insertDate)
+VALUES(?, ?, ?, ?, ?);
+
+selectAll:
+SELECT *
+FROM foodstuff;
+
+removeById:
+DELETE FROM foodstuff
+WHERE id = :id;

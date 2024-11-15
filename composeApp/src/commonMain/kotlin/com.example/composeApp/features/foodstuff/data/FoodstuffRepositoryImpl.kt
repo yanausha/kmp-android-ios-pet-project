@@ -4,8 +4,8 @@ import com.example.composeApp.features.foodstuff.domain.FoodstuffItem
 import com.example.composeApp.features.foodstuff.domain.FoodstuffRepository
 import com.example.composeApp.features.foodstuff.domain.toItem
 import com.example.syncApi.FoodstuffsSyncApi
-import com.example.syncApiImpl.foodstuffs.database.FoodstuffEntity
 import com.example.composeApp.utils.getCurrentDateTimeLongFormat
+import com.example.syncApiImpl.foodstuffs.database.FoodstuffEntity
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.IO
 import kotlinx.coroutines.flow.Flow
@@ -26,7 +26,7 @@ class FoodstuffRepositoryImpl(
     override suspend fun createItem() = withContext(Dispatchers.IO) {
         foodstuffsSyncApi.createOrUpdate(
             FoodstuffEntity(
-                id = Random.nextLong(),
+                id = Random.nextLong().toString(),
                 insertDate = getCurrentDateTimeLongFormat(),
             ).toSyncEntity()
         )

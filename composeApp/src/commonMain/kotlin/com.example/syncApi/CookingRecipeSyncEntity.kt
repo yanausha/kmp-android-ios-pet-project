@@ -9,7 +9,7 @@ class CookingRecipeSyncEntity(
     val description: String,
 ) {
     fun toDbEntity() = CookingRecipeEntity(
-        id = id,
+        id = id.toString(),
         insertDate = insertDate,
         title = title,
         description = description

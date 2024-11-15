@@ -11,9 +11,9 @@ class FoodstuffSyncEntity (
     val insertDate: Long
 ) {
     fun toDbEntity() = FoodstuffEntity(
-        id = id,
+        id = id.toString(),
         name = name,
-        count = count,
+        count = count.toLong(),
         unit = unit.name,
         insertDate = insertDate
     )

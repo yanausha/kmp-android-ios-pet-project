@@ -1,22 +1,19 @@
 package com.example.syncApiImpl.foodstuffs.database
 
-import androidx.room.Entity
-import androidx.room.PrimaryKey
 import com.example.composeApp.enums.ProductUnit
 import com.example.syncApi.FoodstuffSyncEntity
 
-@Entity
 class FoodstuffEntity(
-    @PrimaryKey val id: Long,
+    val id: String,
     val name: String = "",
-    val count: Int = 0,
+    val count: Long = 0,
     val unit: String = ProductUnit.PIECE.name,
     val insertDate: Long
 ) {
     fun toSyncEntity() = FoodstuffSyncEntity(
-        id = id,
+        id = id.toLong(),
         name = name,
-        count = count,
+        count = count.toInt(),
         unit = ProductUnit.valueOf(unit),
         insertDate = insertDate
     )

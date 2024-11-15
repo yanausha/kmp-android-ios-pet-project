@@ -4,10 +4,8 @@ plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsCompose)
-
-    // Room
-    alias(libs.plugins.ksp)
-    alias(libs.plugins.room)
+    alias(libs.plugins.serialization)
+    alias(libs.plugins.sqldelight)
 }
 
 kotlin {
@@ -33,7 +31,6 @@ kotlin {
     }
 
     sourceSets {
-
         commonMain.dependencies {
             implementation(compose.runtime)
             implementation(compose.foundation)
@@ -42,11 +39,6 @@ kotlin {
             implementation(compose.ui)
             implementation(compose.components.resources)
             implementation(compose.components.uiToolingPreview)
-
-            // Room
-            implementation(libs.androidx.paging.common)
-            implementation(libs.androidx.room.runtime)
-            implementation(libs.sqlite.bundled)
 
             //Coroutines
             implementation(libs.kotlinx.coroutines.core)
@@ -62,22 +54,38 @@ kotlin {
 
             //KotlinX
             implementation(libs.kotlinx.datetime)
+            implementation(libs.kotlinx.serialization.core)
+            implementation(libs.kotlinx.serialization.json)
+
+            //Ktor
+            implementation(libs.ktor.client.core)
+            implementation(libs.ktor.client.json)
+            implementation(libs.ktor.client.serialization)
+            implementation(libs.ktor.client.negotiation)
+            implementation(libs.ktor.client.logging)
         }
         androidMain.dependencies {
             implementation(libs.compose.ui.tooling.preview)
             implementation(libs.androidx.activity.compose)
-
-            // Room
-            implementation(libs.androidx.room.paging)
 
             //Coroutines
             implementation(libs.kotlinx.coroutines.android)
 
             //Koin
             implementation(libs.koin.android)
+
+            //Ktor
+            implementation(libs.ktor.client.android)
+
+            //sqldelight
+            implementation(libs.sqldelight.android.driver)
         }
         iosMain.dependencies {
-            // Intentionally left blank
+            //Ktor
+            implementation(libs.ktor.client.ios)
+
+            //sqldelight
+            implementation(libs.sqldelight.native.driver)
         }
     }
 }
@@ -114,9 +122,6 @@ android {
 
     dependencies {
         debugImplementation(libs.compose.ui.tooling)
-
-        // Room
-        implementation(libs.androidx.paging.compose.android)
     }
 }
 
@@ -132,14 +137,12 @@ compose.desktop {
     }
 }
 
-dependencies {
-    // Room
-    add("kspAndroid", libs.androidx.room.compiler)
-    add("kspIosSimulatorArm64", libs.androidx.room.compiler)
-    add("kspIosX64", libs.androidx.room.compiler)
-    add("kspIosArm64", libs.androidx.room.compiler)
-}
-
-room {
-    schemaDirectory("$projectDir/schemas")
+sqldelight {
+    databases {
+        create("AppDatabase") {
+            packageName.set("com.example.schemas")
+            generateAsync.set(true)
+        }
+    }
+    linkSqlite = true
 }
