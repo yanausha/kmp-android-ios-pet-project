@@ -6,6 +6,7 @@ plugins {
     alias(libs.plugins.jetbrainsCompose)
     alias(libs.plugins.serialization)
     alias(libs.plugins.sqldelight)
+    alias(libs.plugins.compose.compiler)
 }
 
 kotlin {

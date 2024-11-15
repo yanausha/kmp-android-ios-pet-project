@@ -3,21 +3,21 @@ agp = "8.2.2"
 android-compileSdk = "34"
 android-minSdk = "24"
 android-targetSdk = "34"
-androidx-activityCompose = "1.9.0"
-compose = "1.6.7"
-compose-plugin = "1.6.2"
-kotlin = "1.9.23"
-serialization = "1.5.1"
+androidx-activityCompose = "1.9.3"
+compose = "1.7.5"
+compose-plugin = "1.6.11"
+kotlin = "2.0.10"
+serialization = "1.6.2"
 
 #Room
 androidx-room = "2.7.0-alpha01"
 ksp = "1.9.23-1.0.19"
 sqlite = "2.5.0-SNAPSHOT"
-pagingComposeAndroid = "3.3.0-rc01"
-androidx-paging = "3.3.0-rc01"
+pagingComposeAndroid = "3.3.4"
+androidx-paging = "3.3.4"
 
 #Coroutines
-kotlinx-coroutines = "1.8.1"
+kotlinx-coroutines = "1.9.0"
 
 #ViewModel
 compose-viewmodel = "2.8.0"
@@ -26,10 +26,10 @@ compose-viewmodel = "2.8.0"
 compose-navigation = "2.7.0-alpha07"
 
 #Koin
-koin = "3.2.0"
+koin = "3.5.3"
 
 #Ktor
-ktor = "2.3.5"
+ktor = "2.3.7"
 
 #sqldelight
 sqldelight = "2.0.1"
@@ -90,12 +90,7 @@ sqldelight-js-driver = { module = "app.cash.sqldelight:web-worker-driver", versi
 androidApplication = { id = "com.android.application", version.ref = "agp" }
 androidLibrary = { id = "com.android.library", version.ref = "agp" }
 jetbrainsCompose = { id = "org.jetbrains.compose", version.ref = "compose-plugin" }
+compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 kotlinMultiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
 serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
-
-#Room
-ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
-room = { id = "androidx.room", version.ref = "androidx-room" }
-
-#sqldelight
 sqldelight = { id = "app.cash.sqldelight", version.ref = "sqldelight" }
